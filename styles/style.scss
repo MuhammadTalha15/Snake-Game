@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mn{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(14, 14, 14);
+    @include flex();
+
+    .board{
+        height: 30vmax;
+        width: 30vmax;
+        display: grid;
+        grid-template-columns: repeat(18, 1fr);
+        grid-template-rows: repeat(18, 1fr);
+        border: 2px solid #4b4b4b;
+        background-color: rgb(40, 40, 40);
+
+        .snake{
+            background: linear-gradient(rgb(77, 5, 5), rgb(101, 37, 3));
+            height: 1fr;
+            width: 1fr;
+            border: 1px solid black;
+            border-radius: 5px;
+            transform: scale(1.2);
+        }
+
+        .food{
+            background: linear-gradient(yellow, orange);
+            height: 1fr;
+            width: 1fr;
+            border-radius: 50%;
+        }
+    }
+}
